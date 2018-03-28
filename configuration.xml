@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<configuration>
+    <classpath>
+        <entry>lib/ojdbc14.jar</entry>
+        <entry>lib/sqljdbc4.jar</entry>
+        <entry>lib/mysql-connector-java-5.1.36-bin.jar</entry>
+        <entry>lib/postgresql-8.2-505.jdbc2.jar</entry>
+    </classpath>
+    <connections>
+        <database name="oracl_yun">
+            <driverClass>oracle.jdbc.OracleDriver</driverClass>
+            <url>jdbc:oracle:thin:@123.207.216.79:1521/ORCL</url>
+            <username>KANG_BRICK</username>
+            <password>PW_KANG_BRICK</password>
+            <schema>KANG_BRICK</schema>
+        </database>
+        <database name="测试cash">
+            <driverClass>com.mysql.jdbc.Driver</driverClass>
+            <url>jdbc:mysql://192.168.188.130:3306/sljr_jrxj</url>
+            <username>sljrorder</username>
+            <password>sljrorder@2017+</password>
+            <schema/>
+        </database>
+        <database name="开发cash">
+            <driverClass>com.mysql.jdbc.Driver</driverClass>
+            <url>jdbc:mysql://118.31.13.240:3306/yzb_sso</url>
+            <username>root</username>
+            <password>yizuanbao123</password>
+            <schema/>
+        </database>
+    </connections>
+    <targetProject>D:\</targetProject>
+    <basePackage>com.kang.ats.base</basePackage>
+    <moduleName>lots</moduleName>
+    <templates>
+        <template engine="freemarker" id="entity" name="实体类" selected="true">
+            <templateFile>entity.ftl</templateFile>
+            <targetPath>${targetProject}\src\main\java\${basePackage}\${moduleName}\entity</targetPath>
+            <targetFileName>${table.className}.java</targetFileName>
+            <encoding>UTF-8</encoding>
+        </template>
+        <template engine="freemarker" id="mapper" name="Mapper" selected="true">
+            <templateFile>mapper.ftl</templateFile>
+            <targetPath>${targetProject}\src\main\java\${basePackage}\${moduleName}\mapper</targetPath>
+            <targetFileName>${table.className}Mapper.java</targetFileName>
+            <encoding>UTF-8</encoding>
+        </template>
+        <template engine="freemarker" id="mapperXml" name="MapperXml" selected="true">
+            <templateFile>mapperXml.ftl</templateFile>
+            <targetPath>${targetProject}\src\main\java\${basePackage}\${moduleName}\mapper</targetPath>
+            <targetFileName>${table.className}Mapper.xml</targetFileName>
+            <encoding>UTF-8</encoding>
+        </template>
+    </templates>
+</configuration>
